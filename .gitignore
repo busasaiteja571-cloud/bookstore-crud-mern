@@ -34,6 +34,10 @@ coverage/
 # Build output
 dist/
 build/
+.vercel/
+
+# Vercel config (keep this — it's needed for deployment)
+# backend/vercel.json
 
 # IDE — VS Code
 .vscode/
