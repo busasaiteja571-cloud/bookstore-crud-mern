@@ -36,6 +36,9 @@ dist/
 build/
 .vercel/
 
+# Docker
+docker-compose.yml
+
 # Vercel config (keep this — it's needed for deployment)
 # backend/vercel.json
 
