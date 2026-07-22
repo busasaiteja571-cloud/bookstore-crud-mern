@@ -18,6 +18,10 @@ import 'dotenv/config';
 
 import connectDB from './config/db.js';
 import bookRoutes from './routes/bookRoutes.js';
+import authRoutes from './routes/authRoutes.js';
+import cookieParser from 'cookie-parser';
+
+
 // Create the Express application instance. This 'app' object
 // is what we'll attach routes and middleware to.
 const app = express();
@@ -25,10 +29,22 @@ const app = express();
 // Call the connection function immediately on startup.
 connectDB();
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  process.env.FRONTEND_URL,
+]
 // Middleware: runs on EVERY incoming request, in order, before
 // it reaches a route handler.
-app.use(cors());           // allow cross-origin requests
+app.use(cors({
+  origin : allowedOrigins,
+  //credentials : true is REQUIRED for cookies to be sent / recivedd
+  //cross-origin (frontend on : 5173), backend on : 5000 count as
+  //different origins even both on localhost). Without this, the 
+  //browser silently refuses to send or store the cookie.
+  credentials : true,
+}));           // allow cross-origin requests
 app.use(express.json());   // parse incoming JSON request bodies into req.body
+app.use(cookieParser()); //parses the Cookie header into req.cookies
 
 // A simple test route to confirm the server is alive.
 app.get('/', (req, res) => {
@@ -38,6 +54,7 @@ app.get('/', (req, res) => {
 // Every request starting with /books gets forwarded to bookRoutes.
 // So router.get('/') above actually handles GET /books.
 app.use('/books', bookRoutes);
+app.use('/auth',authRoutes);
 
 // Pull the port from .env, fall back to 5000 if not set.
 const PORT = process.env.PORT || 5000;
