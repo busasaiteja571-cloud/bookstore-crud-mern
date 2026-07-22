@@ -52,7 +52,7 @@ export const Books = () => {
                 if(searchTerm){
                     response = await searchBooks(searchTerm);
                 }else if(sortOrder){
-                    response = await searchBooks(sortOrder);
+                    response = await sortBooks(sortOrder);
                 }else if(category !== 'All'){
                     response = await getBooksByCategory(category);
                 }else{
