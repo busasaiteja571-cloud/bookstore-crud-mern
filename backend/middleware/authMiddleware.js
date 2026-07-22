@@ -1,7 +1,5 @@
-// middleware/authMiddleware.js
 
-const jwt = require('jsonwebtoken');
-
+import jwt from 'jsonwebtoken';
 // 'protect' verifies a valid JWT exists before letting the request
 // continue to the actual route handler. Any route wrapped with this
 // middleware requires the user to be LOGGED IN (any role).

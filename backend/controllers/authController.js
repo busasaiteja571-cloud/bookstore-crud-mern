@@ -1,7 +1,5 @@
-// controllers/authController.js
-
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+import jwt from 'jsonwebtoken';
+import User from '../models/User.js'
 
 // Small helper — generates a signed JWT containing the user's id
 // and role. We deliberately do NOT put the password or email in
