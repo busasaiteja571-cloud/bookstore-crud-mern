@@ -1,0 +1,46 @@
+/* Navbar Container */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navigation Links (React Router renders these as <a> tags) */
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #646cff;
+}
+
+/* Active link styling (Optional: if you use NavLink instead of Link later) */
+nav a.active {
+  color: #646cff;
+  border-bottom: 2px solid #646cff;
+  padding-bottom: 2px;
+}
+
+/* Cart Counter Display */
+nav span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #2a2a2a;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f1f1f1;
+  border: 1px solid #333;
+}

@@ -1,0 +1,88 @@
+/* 1. Global Setup & Variables */
+:root {
+    /* Force browser to prioritize light mode */
+    color-scheme: light; 
+
+    /* Font Families */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    
+    /* Color Palette (With !important to block system dark-mode extensions) */
+    --color-bg: #f8f9fa !important;
+    --color-text-main: #212529 !important;
+    --color-text-muted: #6c757d;
+    --color-primary: #0d6efd;
+    --color-primary-hover: #0a58ca;
+    --color-border: #dee2e6;
+    
+    /* Global Line Heights */
+    --body-line-height: 1.6;
+    --heading-line-height: 1.25;
+}
+
+/* Clear box model across the entire app */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Global Document Styles */
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    background: #f8f9fa; /* Explicit fallback for light mode background */
+    line-height: var(--body-line-height);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Typography & Clean Text Styling */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text-main);
+    font-weight: 700;
+    line-height: var(--heading-line-height);
+    margin-bottom: 0.5em;
+    letter-spacing: -0.025em; /* Tighter, premium feel */
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.35rem; }
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-main);
+}
+
+/* Small contextual text (like categories, timestamps, authors) */
+small, .text-muted {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+/* 4. Global Interactive Elements */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+button {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Smooth Layout wrapper */
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,99 @@
+/* Main Home Container */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Hero Banner Section */
+.banner {
+  background: linear-gradient(135deg, #646cff 0%, #4338ca 100%);
+  color: #ffffff;
+  padding: 3.5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 15px rgba(100, 108, 255, 0.2);
+}
+
+.banner h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.banner p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Individual Book Sections */
+.book-section {
+  margin-bottom: 3rem;
+}
+
+.book-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 0.5rem;
+}
+
+/* Book Grid Layout - Matching 4 columns configuration */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* Loading & Error Text */
+.loading-text,
+.error-text {
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.loading-text {
+  color: #666;
+}
+
+.error-text {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 4rem auto;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1200px) {
+  .book-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .banner h1 {
+    font-size: 2rem;
+  }
+  
+  .banner p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,93 @@
+/* Container styling for the form */
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form group layout */
+form > div {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* General styling for inputs, selects, and textareas */
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: #f9fafb;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Focus states */
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* Textarea specific height */
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Error message styling */
+.error {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+/* Button container / layout */
+form button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-right: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+form button:active {
+  transform: scale(0.98);
+}
+
+/* Submit Button */
+form button[type="submit"] {
+  background-color: #6366f1;
+  color: #ffffff;
+}
+
+form button[type="submit"]:hover {
+  background-color: #4f46e5;
+}
+
+/* Reset Button */
+form button[type="button"] {
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+
+form button[type="button"]:hover {
+  background-color: #d1d5db;
+}
