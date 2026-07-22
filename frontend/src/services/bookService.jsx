@@ -1,4 +1,4 @@
-import api from "./axios";
+import api from "./api";
 
 // Centralizing API calls here (rather than calling axios directly
 // inside components) means components don't need to know the exact

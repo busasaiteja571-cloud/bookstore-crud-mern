@@ -3,10 +3,12 @@ import { getAllBooks,searchBooks,getBooksByCategory,sortBooks, deleteBookById } 
 import { BookCard } from "../components/BookCard";
 import ConfirmDialog from "../components/ConfirmDialog";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import './Books.css'
 
 export const Books = () => {
 
+    const { isAdmin } = useAuth();
     //books: holds the array of book objects once fetched.
     //Starts as an empty array (not undefined) so .map() below
     //never crashes on the very first render, before data arrieves.
@@ -133,8 +135,12 @@ export const Books = () => {
                     <div key={book._id} className="book-card-wrapper">
 
                         <BookCard book={book} />
-                         <Link to={`/update-book/${book._id}`} className="update-btn">Update</Link>
-                        <button onClick={() => handleDeleteClick(book)}>Delete</button>
+                        {isAdmin && (
+                            <div className="card-actions">
+                                <Link to={`/update-book/${book._id}`} className="update-btn">Update</Link>
+                                <button className="delete-btn" onClick={() => handleDeleteClick(book)}>Delete</button>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>

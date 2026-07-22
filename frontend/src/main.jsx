@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import { CartProvider } from './context/CartContext.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,11 +16,17 @@ createRoot(document.getElementById('root')).render(
       */
       }
       <BrowserRouter>
+      {/* AuthProvider wraps CartProvider — order between the two doesn't
+          matter functionally here since neither depends on the other,
+          but outermost-to-innermost roughly mirrors "identity, then
+          identity-dependent state" as a readability convention. */}
+      <AuthProvider>
         {/* CartProvider must wrap App so EVERY component — Navbar,
           BookCard, a future Cart page — can access cart state via useCart() */}
           <CartProvider>
             <App />
           </CartProvider>
+      </AuthProvider>
       </BrowserRouter>
 
   </StrictMode>,

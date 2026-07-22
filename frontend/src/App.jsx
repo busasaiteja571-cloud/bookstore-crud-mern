@@ -6,6 +6,9 @@ import { AddBook } from './pages/AddBook.jsx';
 import { UpdateBook } from './pages/UpdateBook.jsx';
 import { Navbar } from './components/Navbar.jsx';
 import { Cart } from './pages/Cart.jsx';
+import AdminRoute from './components/AdminRoute.jsx';
+import Signup from './pages/Signup.jsx';
+import Login from './pages/Login.jsx';
 
 function App() {
   return (
@@ -19,9 +22,12 @@ function App() {
         {/* :id here works just like Express's :id — it's a URL
             parameter, readable inside BookDetails via useParams() */}
         <Route path="/books/:id" element={<BookDetails />} />
-        <Route path="/add-book" element={<AddBook />} />
-        <Route path="/update-book/:id" element={<UpdateBook />} />
+        // src/App.jsx — wrap the admin-only routes
+        <Route path="/add-book" element={<AdminRoute><AddBook /></AdminRoute>} />
+        <Route path="/update-book/:id" element={<AdminRoute><UpdateBook /></AdminRoute>} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/signup" element={<Signup />} /> 
+        <Route path="/login" element={<Login />} />  
       </Routes>
     </>
   );
