@@ -5,6 +5,10 @@ node_modules/
 .env
 .env.local
 .env.production
+.env*.local
+.env.development
+.env.staging
+.env.test
 
 # Logs
 logs/
@@ -44,6 +48,15 @@ docker-compose.yml
 
 # IDE — VS Code
 .vscode/
+
+# IDE — JetBrains
+.idea/
+
+# Vim swap / backup files
+*.swp
+*.swo
+*~
+*.bak
 
 # OS files
 .DS_Store

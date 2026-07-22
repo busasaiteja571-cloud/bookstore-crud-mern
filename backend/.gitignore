@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.*
+.env*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Build output
+dist/
+build/
+
+# Vercel deployment
+.vercel/
+
+# IDE — VS Code
+.vscode/
+
+# IDE — JetBrains
+.idea/
+
+# Vim swap / backup files
+*.swp
+*.swo
+*~
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
