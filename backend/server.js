@@ -21,6 +21,7 @@ import connectDB from './config/db.js';
 import bookRoutes from './routes/bookRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import cookieParser from 'cookie-parser';
+import orderRoutes from './routes/orderRoutes.js'
 
 
 // Create the Express application instance. This 'app' object
@@ -57,6 +58,7 @@ app.get('/', (req, res) => {
 // So router.get('/') above actually handles GET /books.
 app.use('/books', bookRoutes);
 app.use('/auth',authRoutes);
+app.use('/orders',orderRoutes);
 
 // Pull the port from .env, fall back to 5000 if not set.
 const PORT = process.env.PORT || 5000;
