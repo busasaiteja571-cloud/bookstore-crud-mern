@@ -1,6 +1,7 @@
 import dns from 'node:dns';
 
 dns.setServers(['1.1.1.1', '8.8.8.8']);
+
 // Import the express library — this is the framework that lets us
 // define routes and handle HTTP requests/responses without writing
 // raw Node 'http' module boilerplate.
@@ -26,6 +27,7 @@ import cookieParser from 'cookie-parser';
 // is what we'll attach routes and middleware to.
 const app = express();
 
+app.set('trust proxy', 1);
 // Call the connection function immediately on startup.
 connectDB();
 

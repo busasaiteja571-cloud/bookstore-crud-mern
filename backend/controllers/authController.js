@@ -16,10 +16,11 @@ const generateToken = (user) => {
 // Shared cookie options — httpOnly is the key security property:
 // it means document.cookie in browser JS CANNOT read this cookie,
 // which blocks a whole class of XSS attacks from stealing the token.
+const isProduction = process.env.NODE_ENV === 'production';
 const cookieOptions = {
   httpOnly: true,
-  secure: process.env.NODE_ENV === 'production', // HTTPS-only in prod, allows HTTP in local dev
-  sameSite: 'lax',
+  secure: isProduction, // Must be true if sameSite is 'none'
+  sameSite: isProduction ? 'none' : 'lax', // 'none' allows cross-site cookies in production
   maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days, in milliseconds
 };
 
